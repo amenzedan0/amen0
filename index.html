@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+}
+
+.card{
+    width:350px;
+    padding:40px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    color:#fff;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+h1{
+    margin-bottom:15px;
+    font-size:32px;
+}
+
+p{
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+button{
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+    background:#fff;
+    color:#2575fc;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#f1f1f1;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+    <h1>سلاو ئەتوانە ئەم لینکە بکەیەوە 👋</h1>
+    <p>Beautiful HTML & CSS Design</p>
+    <button onclick="alert('سلاو من ئەمینم خۆش‌‌حالم بە ناسینت')">Click Me</button>
+</div>
+
+</body>
+</html>
