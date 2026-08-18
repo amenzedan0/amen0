@@ -1,271 +1,337 @@
 <!DOCTYPE html>
-<html lang="ckb" dir="rtl">
+<html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>ئیلاف حاجی ڕەحمان | ناوەندی زانستی پەرستاری و دەرمان</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSS SHOYS - فرۆشگای پۆشاکی پیاوان</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Tahoma', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(135deg, #1f4068, #162447, #1b1b2f);
+            color: #fff;
+            min-height: 100vh;
         }
-        body { 
-            font-family: 'Segoe UI', Tahoma, sans-serif; 
-            line-height: 1.8;
-            /* باکگراوندێکی پزیشکیی زۆر قەشەنگ و تاریککراو بۆ دەرکەوتنی نایابی دەقەکان */
-            background: linear-gradient(rgba(4, 15, 30, 0.92), rgba(8, 28, 50, 0.90)), 
-                        url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: #f0f4f8;
-            padding: 20px;
-        }
-        header { 
-            background: linear-gradient(135deg, rgba(13, 148, 136, 0.95), rgba(15, 118, 110, 0.95)); 
-            color: #fff; 
-            padding: 4rem 1rem; 
-            text-align: center; 
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            margin-bottom: 40px;
-            border-bottom: 6px solid #14b8a6;
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid #e43f5a;
         }
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 12px;
-            letter-spacing: 1.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin: 0;
+            font-size: 32px;
+            color: #e43f5a;
+            letter-spacing: 1px;
         }
         header p {
-            font-size: 1.35rem;
-            opacity: 0.95;
+            margin: 10px 0 0;
+            color: #dcdcdc;
+            font-size: 15px;
         }
-        .container { 
-            max-width: 1200px; 
-            margin: auto; 
-            background: rgba(255, 255, 255, 0.97); 
-            color: #1e293b;
-            padding: 50px; 
-            border-radius: 25px; 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
-        }
-        h2 { 
-            color: #0d9488; 
-            border-right: 7px solid #0d9488; 
-            padding-right: 18px; 
-            margin-top: 40px;
-            margin-bottom: 25px;
-            font-size: 2rem;
-        }
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 2.2;
-            color: #334155;
-            margin-bottom: 30px;
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid #e2e8f0;
-        }
-        /* ١٥ پەنجەرەکە یان سندوقەکان بە شێوازی Grid */
-        .grid-container {
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
         }
-        @media (max-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        .card { 
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 18px;
-            border-top: 5px solid #0d9488;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border-left: 1px solid #e2e8f0;
-            border-right: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
         }
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(13, 148, 136, 0.15);
-            border-top-color: #f43f5e;
+            transform: translateY(-7px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #fff;
+        }
+        .card-content {
+            padding: 15px;
         }
         .card h3 {
-            color: #0f766e;
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-            line-height: 1.4;
-        }
-        .card p {
-            color: #475569;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        .footer-credit { 
-            text-align: center;
-            padding: 35px; 
-            background: rgba(10, 22, 40, 0.98); 
-            color: #fff; 
-            border-radius: 25px;
-            margin-top: 50px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            border-top: 4px solid #14b8a6;
-        }
-        .footer-credit p {
-            margin-bottom: 12px;
-            font-size: 1.15rem;
-        }
-        .tiktok-link { 
-            color: #38bdf8; 
-            font-weight: bold; 
-            text-decoration: none; 
-            font-size: 1.35rem;
-            display: inline-block;
-            transition: 0.3s;
-            background: rgba(56, 189, 248, 0.12);
-            padding: 10px 25px;
-            border-radius: 35px;
-            border: 2px solid #38bdf8;
-            margin-top: 12px;
-        }
-        .tiktok-link:hover {
+            font-size: 16px;
+            margin: 5px 0;
             color: #fff;
-            background: #f43f5e;
-            border-color: #f43f5e;
-            transform: scale(1.08);
+        }
+        .category {
+            font-size: 13px;
+            color: #b2bec3;
+            margin-bottom: 8px;
+        }
+        .price {
+            color: #ff6b6b;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .whatsapp-btn {
+            display: block;
+            background-color: #25d366;
+            color: white;
+            padding: 11px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 0 15px 15px 15px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 30px 20px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        footer .brand-sign {
+            font-size: 18px;
+            color: #e43f5a;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        footer a {
+            color: #00cec9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>ئیلاف حاجی ڕەحمان</h1>
-    <p>پەرستاری پسپۆڕ و ڕاوێژکاری باڵای هۆشیاری دەرمانسازی و تەندروستی گشتی</p>
-</header>
+    <header>
+        <h1>BOSS SHOYS</h1>
+        <p>باشترین مۆدێلەکانی پانتۆر، تیشێرت، سەعات و پێڵاو بە نرخێکی گونجاو</p>
+    </header>
 
-<div class="container">
-    
-    <h2>دەربارەی من</h2>
-    <p class="about-text">
-        من ئیلاف حاجی ڕەحمانم، پەرستارێکی خاوەن بڕوانامە و ئەزموون. ئامانجی من لەم وێبسایتە پیشەگەرانەیە بڵاوکردنەوەی زانستی دروست، بەرزکردنەوەی ئاستی هۆشیاری دەرمانسازی لە کۆمەڵگەدا، و ناساندنی بنەماکانی سەلامەتی پەرستاری بۆ پاراستنی ژیانی نەخۆشەکان بە شێوازێکی زانستی و هاوچەرخ.
-    </p>
-
-    <h2>فەرهەنگی زانستی دەرمان و پەرستاری (١٥ پەنجەرەی زانیاری)</h2>
-    
-    <div class="grid-container">
-        <!-- پەنجەرەی ١ -->
+    <div class="container">
         <div class="card">
-            <h3>١. یاسای ٥ ڕاستییەکە (5 Rights)</h3>
-            <p>بنەمای سەرەکی پەرستاری لە کاتی پێدانی دەرماندا بۆ دڵنیابوون لە نەخۆش، دەرمان، بڕ، کات و ڕێگەی دروست.</p>
+            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=500&q=80" alt="پانتۆری کتان">
+            <div class="card-content">
+                <h3>پانتۆری کتان</h3>
+                <div class="category">جۆر: پانتۆر</div>
+                <div class="price">$30</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری کتان" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+        </div>
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=500&q=80" alt="پانتۆری جینز">
+            <div class="card-content">
+                <h3>پانتۆری جینز</h3>
+                <div class="category">جۆر: پانتۆر</div>
+                <div class="price">$35</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری جینز" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٢ -->
         <div class="card">
-            <h3>٢. ئازارشکێنە باوەکان (Paracetamol)</h3>
-            <p>بەکارهێنانی بە کۆنترۆڵ بۆ دابەزاندنی پلەی گەرمی و هێورکردنەوەی ئازاری سووک، بەبێ زیانگەیاندن بە جگەر ئەگەر لە سنووردا بێت.</p>
+            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=500&q=80" alt="پانتۆری فەرمی">
+            <div class="card-content">
+                <h3>پانتۆری فەرمی</h3>
+                <div class="category">جۆر: پانتۆر</div>
+                <div class="price">$40</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری فەرمی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٣ -->
         <div class="card">
-            <h3>٣. دژە هەوکردنەکان (NSAIDs)</h3>
-            <p>وەک ایبوپڕۆفێن؛ پێویستە بە ڕێنمایی پزیشک بخورێن چونکە بەکارهێنانی هەڕەمەکی زیان بە گەدە و گورچیلە دەگەیەنێت.</p>
+            <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=500&q=80" alt="پانتۆری وەرزشی">
+            <div class="card-content">
+                <h3>پانتۆری وەرزشی</h3>
+                <div class="category">جۆر: پانتۆر</div>
+                <div class="price">$25</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری وەرزشی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٤ -->
         <div class="card">
-            <h3>٤. چاودێری ئەنسۆلین و شەکرە</h3>
-            <p>چۆنیەتی هەڵگرتنی دروستی ئەنسۆلین لە ساردکەرەوەدا و گۆڕینی بەردەوامی شوێنی دەرزی بۆ پاراستنی شانەکان.</p>
+            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=500&q=80" alt="پانتۆری کارگۆ">
+            <div class="card-content">
+                <h3>پانتۆری کارگۆ</h3>
+                <div class="category">جۆر: پانتۆر</div>
+                <div class="price">$38</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری کارگۆ" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٥ -->
         <div class="card">
-            <h3>٥. دژەباکتریاکان (Antibiotics)</h3>
-            <p>نابێت هەرگیز بەبێ ڕەچەتە بەکاربێن یان نیوەچڵ بوەستێنرێن، چونکە دەبنە هۆی دروستبوونی بەرگری بەکتریا بەرامبەر دەرمان.</p>
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" alt="فامیلی سپی">
+            <div class="card-content">
+                <h3>تیشێرتی سپی</h3>
+                <div class="category">جۆر: تیشێرت</div>
+                <div class="price">$20</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی سپی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٦ -->
         <div class="card">
-            <h3>٦. دەرمانەکانی پەستانی خوێن</h3>
-            <p>گرنگی بەکاردابڕانی بەردەوامی دەرمانەکانی پەستان لە کاتی خۆیدا بۆ ڕێگریکردن لە جەڵتەی مێشک و دڵ.</p>
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" alt="فامیلی ڕەش">
+            <div class="card-content">
+                <h3>تیشێرتی ڕەش</h3>
+                <div class="category">جۆر: تیشێرت</div>
+                <div class="price">$22</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی ڕەش" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٧ -->
         <div class="card">
-            <h3>٧. ڤیتامینەکان و هوساتەکان</h3>
-            <p>سەرەڕای سوودیان، بەڵام ژەهراویبوونی جەستە بە زۆرخواردنی ڤیتامینی تواوە لە چەوریدا (وەک A و D) مەترسیدارە.</p>
+            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80" alt="فامیلی هێڵدار">
+            <div class="card-content">
+                <h3>تیشێرتی هێڵدار</h3>
+                <div class="category">جۆر: تیشێرت</div>
+                <div class="price">$25</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی هێڵدار" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٨ -->
         <div class="card">
-            <h3>٨. فریاگوزاری سەرەتایی (First Aid)</h3>
-            <p>چۆنیەتی مامەڵەکردن لەگەڵ حاڵەتەکانی بورانەوە، سووتان، و برینداربوونی لەناکاو پێش گەیشتنە نەخۆشخانە.</p>
+            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=500&q=80" alt="فامیلی کراوە">
+            <div class="card-content">
+                <h3>تیشێرتی چاپی</h3>
+                <div class="category">جۆر: تیشێرت</div>
+                <div class="price">$28</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی چاپی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ٩ -->
         <div class="card">
-            <h3>٩. دژە ئەلرجییەکان (Antihistamines)</h3>
-            <p>بەکارهێنانیان بۆ کەمکردنەوەی نیشانەکانی هەستیاری وەرزشی و لووت، لەگەڵ ئاگاداربوون لە کاریگەری خەواڵووبوونیان.</p>
+            <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=500&q=80" alt="فامیلی مەکتەبی">
+            <div class="card-content">
+                <h3>تیشێرتی پۆلۆ</h3>
+                <div class="category">جۆر: تیشێرت</div>
+                <div class="price">$24</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی پۆلۆ" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ١٠ -->
         <div class="card">
-            <h3>١٠. دەرمانەکانی گەدە (PPIs)</h3>
-            <p>وەک ئۆمیپرازۆل؛ باشترە بەیانیان پێش نانخواردن بخورێت بۆ کۆنتڕۆڵکردنی ترشەڵۆکی گەدە بە شێوازێکی کاریگەر.</p>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="سەعاتی دیجیتاڵی">
+            <div class="card-content">
+                <h3>سەعاتی دیجیتاڵی</h3>
+                <div class="category">جۆر: سەعات</div>
+                <div class="price">$50</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی دیجیتاڵی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ١١ -->
         <div class="card">
-            <h3>١١. شلەمەنی ناو خوێن (IV Fluids)</h3>
-            <p>دانانی سیرۆم و پاراستنی خێرایی دڵۆپەکان بەپێی ڕێنمایی پزیشکی ورد بۆ ڕێگریکردن لە باری قەرەباڵغی دڵ.</p>
+            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=500&q=80" alt="سەعاتی کلاسیك">
+            <div class="card-content">
+                <h3>سەعاتی کلاسیك</h3>
+                <div class="category">جۆر: سەعات</div>
+                <div class="price">$70</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی کلاسیك" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ١٢ -->
         <div class="card">
-            <h3>١٢. دەرمانەکانی دڵ و رەوانکەرەوەکان</h3>
-            <p>وەک ئەسپیرین؛ ڕۆڵی سەرەکی هەیە لە ڕێگریکردن لە مەیوونی خوێن و جەڵتە بە بڕی کەم و دیاریکراو.</p>
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" alt="سەعاتی وەرزشی">
+            <div class="card-content">
+                <h3>سەعاتی وەرزشی</h3>
+                <div class="category">جۆر: سەعات</div>
+                <div class="price">$45</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی وەرزشی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ١٣ -->
         <div class="card">
-            <h3>١٣. هۆشیاری بەکارهێنانی قەترەی چاو</h3>
-            <p>پێویستی دەستپاکڕاگرتن و بەرنەکەوتنی سەرەی قەترەکە بە چاو بۆ ڕێگریکردن لە گواستنەوەی هەوکردنی بەکتریایی.</p>
+            <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=500&q=80" alt="سەعاتی چەرم">
+            <div class="card-content">
+                <h3>سەعاتی چەرم</h3>
+                <div class="category">جۆر: سەعات</div>
+                <div class="price">$60</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی چەرم" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ١٤ -->
         <div class="card">
-            <h3>١٤. ڕێنمایی دەرزی لێدان (Injections)</h3>
-            <p>گرنگی وەرگرتنی ڕەچەتە و دڵنیابوونەوە لە نەبوونی هەستیاری نەخۆش پێش پێدانی هەندێک دەرزی بەهێز.</p>
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=80" alt="سەعاتی ستیل">
+            <div class="card-content">
+                <h3>سەعاتی ستیل</h3>
+                <div class="category">جۆر: سەعات</div>
+                <div class="price">$80</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی ستیل" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <!-- پەنجەرەی ١٥ -->
         <div class="card">
-            <h3>١٥. پاراستنی پاکوخاوەنی نەخۆشخانە</h3>
-            <p>ڕێکارەکانی پاکژکردنەوە و ڕێگریکردن لە بڵابوونەوەی نەخۆشییە گوازراوەکان لە ناو ژینگەی پزیشکیدا.</p>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی وەرزشی">
+            <div class="card-content">
+                <h3>پێڵاوی وەرزشی</h3>
+                <div class="category">جۆر: پێڵاو</div>
+                <div class="price">$55</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی وەرزشی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1533867617858-e7d97e0afd8b?auto=format&fit=crop&w=500&q=80" alt="Boss پێڵاوی">
+            <div class="card-content">
+                <h3>پێڵاوی Boss</h3>
+                <div class="category">جۆر: پێڵاو</div>
+                <div class="price">$65</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی Boss" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی بوت">
+            <div class="card-content">
+                <h3>پێڵاوی بوت</h3>
+                <div class="category">جۆر: پێڵاو</div>
+                <div class="price">$75</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی بوت" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی ڕۆیشتن">
+            <div class="card-content">
+                <h3>پێڵاوی ڕۆیشتن</h3>
+                <div class="category">جۆر: پێڵاو</div>
+                <div class="price">$50</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی ڕۆیشتن" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی ماڵەوە">
+            <div class="card-content">
+                <h3>پێڵاوی ماڵەوە</h3>
+                <div class="category">جۆر: پێڵاو</div>
+                <div class="price">$20</div>
+            </div>
+            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی ماڵەوە" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
     </div>
 
-</div>
-
-<div class="footer-credit">
-    <p>ئەم وێبسایتە نایابە دروست کراوە لەلایەن: <b>ئەمین</b></p>
-    <p>بۆ داواکاری دروستکردنی وێبسایتی تایبەت و پێشکەوتوو، سەردانی تیک تۆکم بکە:</p>
-    <a href="https://tiktok.com/@amenzedan1" class="tiktok-link" target="_blank">TikTok: @amenzedan1</a>
-</div>
+    <footer>
+        <div class="brand-sign">BOSS SHOYS</div>
+        <p>بۆ بینینی مۆدێلەکان سەردانی تیک تۆک بکە: <a href="https://www.tiktok.com/@amenzedan1" target="_blank">tiktok / amenzedan1</a></p>
+    </footer>
 
 </body>
 </html>
