@@ -3,335 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOSS SHOYS - فرۆشگای پۆشاکی پیاوان</title>
+    <title>پشکنیینی لێدانی دڵ - AMEN</title>
     <style>
         body {
-            font-family: 'Tahoma', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1f4068, #162447, #1b1b2f);
-            color: #fff;
-            min-height: 100vh;
-        }
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.4);
-            border-bottom: 2px solid #e43f5a;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-            color: #e43f5a;
-            letter-spacing: 1px;
-        }
-        header p {
-            margin: 10px 0 0;
-            color: #dcdcdc;
-            font-size: 15px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 20px;
-            padding: 0 20px;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+            font-family: 'Tahoma', sans-serif;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
         }
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background-color: #fff;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card h3 {
-            font-size: 16px;
-            margin: 5px 0;
-            color: #fff;
-        }
-        .category {
-            font-size: 13px;
-            color: #b2bec3;
-            margin-bottom: 8px;
-        }
-        .price {
-            color: #ff6b6b;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-        .whatsapp-btn {
-            display: block;
-            background-color: #25d366;
-            color: white;
-            padding: 11px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            margin: 0 15px 15px 15px;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .whatsapp-btn:hover {
-            background-color: #20ba5a;
-            transform: scale(1.02);
-        }
-        footer {
+
+        .card {
+            background-color: #ffffff;
+            width: 380px;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 30px 20px;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
         }
-        footer .brand-sign {
-            font-size: 18px;
-            color: #e43f5a;
+
+        .header-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .sub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed #ffccd5;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .sub-header .title-right {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #d63384;
+            font-weight: bold;
+        }
+
+        .scan-container {
+            background-color: #fff0f3;
+            border: 1px solid #ffccd5;
+            border-radius: 12px;
+            padding: 10px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .bpm-status {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #d63384;
             font-weight: bold;
             margin-bottom: 8px;
         }
-        footer a {
-            color: #00cec9;
-            text-decoration: none;
-            font-weight: bold;
+
+        /* هێڵی تەختیتی دڵ کە هاتوچۆ دەکات */
+        .ecg-box {
+            height: 55px;
+            border: 1px solid #ffb3c1;
+            border-radius: 8px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
         }
-        footer a:hover {
-            text-decoration: underline;
+
+        .ecg-wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 50' preserveAspectRatio='none'%3E%3Cpath d='M0,25 L100,25 L110,10 L120,40 L130,5 L140,45 L150,25 L250,25 L260,10 L270,40 L280,5 L290,45 L300,25 L400,25 L410,10 L420,40 L430,5 L440,45 L450,25 L500,25' fill='none' stroke='%23d63384' stroke-width='2.5'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-size: 250px 50px;
+            opacity: 0.3;
+        }
+
+        .active-wave {
+            opacity: 1;
+            animation: moveWave 1.5s linear infinite;
+        }
+
+        @keyframes moveWave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-250px); }
+        }
+
+        .fingerprint-section {
+            margin: 15px 0;
+        }
+
+        .fingerprint-btn {
+            width: 75px;
+            height: 75px;
+            background-color: #fff0f3;
+            border: 2px solid #ff8099;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 128, 153, 0.4);
+            transition: 0.2s;
+        }
+
+        .fingerprint-btn:active {
+            transform: scale(0.95);
+            background-color: #ffd1dc;
+        }
+
+        .fingerprint-icon {
+            font-size: 32px;
+        }
+
+        .instruction-text {
+            font-size: 13px;
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .results-section {
+            display: none;
+            text-align: right;
+        }
+
+        .result-box {
+            background-color: #fff0f3;
+            border: 1px solid #ffccd5;
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .result-box span {
+            font-weight: bold;
+            color: #d63384;
+        }
+
+        .advice-box {
+            background-color: #fff0f3;
+            border: 1px solid #ffccd5;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #555;
+            text-align: right;
+        }
+
+        .btn-thanks {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
+        }
+
+        .loading-overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-weight: bold;
+            color: #d63384;
+            z-index: 10;
+        }
+
+        .spinner {
+            border: 4px solid #ffe6eb;
+            border-top: 4px solid #d63384;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>BOSS SHOYS</h1>
-        <p>باشترین مۆدێلەکانی پانتۆر، تیشێرت، سەعات و پێڵاو بە نرخێکی گونجاو</p>
-    </header>
+    <div class="card">
+        <div class="header-title">AMEN</div>
 
-    <div class="container">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=500&q=80" alt="پانتۆری کتان">
-            <div class="card-content">
-                <h3>پانتۆری کتان</h3>
-                <div class="category">جۆر: پانتۆر</div>
-                <div class="price">$30</div>
+        <div class="sub-header">
+            <span>پشکنیینی فەرمی !</span>
+            <div class="title-right">
+                <span>پشکنیینی تایبەتی دڵ</span> 💖🩺
             </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری کتان" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-        
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=500&q=80" alt="پانتۆری جینز">
-            <div class="card-content">
-                <h3>پانتۆری جینز</h3>
-                <div class="category">جۆر: پانتۆر</div>
-                <div class="price">$35</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری جینز" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=500&q=80" alt="پانتۆری فەرمی">
-            <div class="card-content">
-                <h3>پانتۆری فەرمی</h3>
-                <div class="category">جۆر: پانتۆر</div>
-                <div class="price">$40</div>
+        <div id="interactive-part">
+            <div class="scan-container">
+                <div class="bpm-status">
+                    <span id="bpm-val">لێدان: - BPM</span>
+                    <span id="status-text">وەستاوە</span>
+                </div>
+                <div class="ecg-box">
+                    <div class="ecg-wave" id="waveLine"></div>
+                </div>
             </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری فەرمی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+
+            <div class="fingerprint-section">
+                <div class="fingerprint-btn" onclick="startScanning()">
+                    <span class="fingerprint-icon">🫵</span>
+                </div>
+                <div class="instruction-text">تکایە پەنجەت لەسەر هەستەوەرەکە دابنێ بۆ دەستپێکردنی پشکنین!</div>
+            </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=500&q=80" alt="پانتۆری وەرزشی">
-            <div class="card-content">
-                <h3>پانتۆری وەرزشی</h3>
-                <div class="category">جۆر: پانتۆر</div>
-                <div class="price">$25</div>
+        <div class="results-section" id="results-part">
+            <div class="result-box">
+                <span>تەخسیصی پزیشکی:</span> تێکچوونی نەرم و نیانی لێدانی دڵ 🩷
             </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری وەرزشی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+
+            <div class="result-box">
+                <span>لێدان:</span> BPM 87 ❤️ 📈 (لێدانی دڵی ئێستای بەکارهێنەر)
+            </div>
+
+            <div class="result-box">
+                <span>ئەنجامی پشکنین:</span> سەلمینرا کە تەنها بۆ من لێدەدات 🔒
+            </div>
+
+            <div class="result-box">
+                <span>ڕێژەی خۆشەویستی:</span> زیاتر لە توانا و پێوەرەکانی مۆنیتەرە 📈
+            </div>
+
+            <div class="result-box">
+                <span>چارەسەری خێرا:</span> تکایە دەستبەجێ نامەیەک بنێرە و قسەم لەگەڵ بکە 🙃
+            </div>
+
+            <div class="advice-box">
+                <b>ڕێنمایی پزیشک:</b> ئەم نەخۆشییە هیچ دەرمانێکی ناوێت، تەنها کاتێک تەندروستی جێگیر دەبێت کە سەری خۆت بخەیتە سەر سینەم و گوێ لە لێدانی دڵم بگریت! 🥰❤️
+            </div>
+
+            <button class="btn-thanks">سپاس دکتۆر گیان ! 🥼💖</button>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=500&q=80" alt="پانتۆری کارگۆ">
-            <div class="card-content">
-                <h3>پانتۆری کارگۆ</h3>
-                <div class="category">جۆر: پانتۆر</div>
-                <div class="price">$38</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پانتۆری کارگۆ" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" alt="فامیلی سپی">
-            <div class="card-content">
-                <h3>تیشێرتی سپی</h3>
-                <div class="category">جۆر: تیشێرت</div>
-                <div class="price">$20</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی سپی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" alt="فامیلی ڕەش">
-            <div class="card-content">
-                <h3>تیشێرتی ڕەش</h3>
-                <div class="category">جۆر: تیشێرت</div>
-                <div class="price">$22</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی ڕەش" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80" alt="فامیلی هێڵدار">
-            <div class="card-content">
-                <h3>تیشێرتی هێڵدار</h3>
-                <div class="category">جۆر: تیشێرت</div>
-                <div class="price">$25</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی هێڵدار" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=500&q=80" alt="فامیلی کراوە">
-            <div class="card-content">
-                <h3>تیشێرتی چاپی</h3>
-                <div class="category">جۆر: تیشێرت</div>
-                <div class="price">$28</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی چاپی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=500&q=80" alt="فامیلی مەکتەبی">
-            <div class="card-content">
-                <h3>تیشێرتی پۆلۆ</h3>
-                <div class="category">جۆر: تیشێرت</div>
-                <div class="price">$24</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: تیشێرتی پۆلۆ" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="سەعاتی دیجیتاڵی">
-            <div class="card-content">
-                <h3>سەعاتی دیجیتاڵی</h3>
-                <div class="category">جۆر: سەعات</div>
-                <div class="price">$50</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی دیجیتاڵی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=500&q=80" alt="سەعاتی کلاسیك">
-            <div class="card-content">
-                <h3>سەعاتی کلاسیك</h3>
-                <div class="category">جۆر: سەعات</div>
-                <div class="price">$70</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی کلاسیك" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" alt="سەعاتی وەرزشی">
-            <div class="card-content">
-                <h3>سەعاتی وەرزشی</h3>
-                <div class="category">جۆر: سەعات</div>
-                <div class="price">$45</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی وەرزشی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=500&q=80" alt="سەعاتی چەرم">
-            <div class="card-content">
-                <h3>سەعاتی چەرم</h3>
-                <div class="category">جۆر: سەعات</div>
-                <div class="price">$60</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی چەرم" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=80" alt="سەعاتی ستیل">
-            <div class="card-content">
-                <h3>سەعاتی ستیل</h3>
-                <div class="category">جۆر: سەعات</div>
-                <div class="price">$80</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: سەعاتی ستیل" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی وەرزشی">
-            <div class="card-content">
-                <h3>پێڵاوی وەرزشی</h3>
-                <div class="category">جۆر: پێڵاو</div>
-                <div class="price">$55</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی وەرزشی" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1533867617858-e7d97e0afd8b?auto=format&fit=crop&w=500&q=80" alt="Boss پێڵاوی">
-            <div class="card-content">
-                <h3>پێڵاوی Boss</h3>
-                <div class="category">جۆر: پێڵاو</div>
-                <div class="price">$65</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی Boss" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی بوت">
-            <div class="card-content">
-                <h3>پێڵاوی بوت</h3>
-                <div class="category">جۆر: پێڵاو</div>
-                <div class="price">$75</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی بوت" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی ڕۆیشتن">
-            <div class="card-content">
-                <h3>پێڵاوی ڕۆیشتن</h3>
-                <div class="category">جۆر: پێڵاو</div>
-                <div class="price">$50</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی ڕۆیشتن" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=500&q=80" alt="پێڵاوی ماڵەوە">
-            <div class="card-content">
-                <h3>پێڵاوی ماڵەوە</h3>
-                <div class="category">جۆر: پێڵاو</div>
-                <div class="price">$20</div>
-            </div>
-            <a href="https://wa.me/9647500000000?text=سڵاو، دەمەوێت ئەم بەرهەمە داوا بکەم: پێڵاوی ماڵەوە" class="whatsapp-btn" target="_blank">بۆ داوا کردن WhatsApp</a>
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="spinner"></div>
+            <div>نامادەکردنی ئەنجامی پشکنین...</div>
         </div>
     </div>
 
-    <footer>
-        <div class="brand-sign">BOSS SHOYS</div>
-        <p>بۆ بینینی مۆدێلەکان سەردانی تیک تۆک بکە: <a href="https://www.tiktok.com/@amenzedan1" target="_blank">tiktok / amenzedan1</a></p>
-    </footer>
+    <script>
+        function playBeep() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(650, audioCtx.currentTime);
+
+                gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.15);
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + 0.15);
+            } catch (e) {
+                console.log("Audio error");
+            }
+        }
+
+        function startScanning() {
+            document.getElementById('status-text').innerText = "لە پشکنیندایە...";
+            document.getElementById('waveLine').classList.add('active-wave');
+            
+            let count = 0;
+            let beepInterval = setInterval(function() {
+                playBeep();
+                let randomBpm = Math.floor(Math.random() * (90 - 86 + 1)) + 86;
+                document.getElementById('bpm-val').innerText = "لێدان: " + randomBpm + " BPM";
+                count++;
+                
+                if(count >= 5) {
+                    clearInterval(beepInterval);
+                }
+            }, 600);
+
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.display = 'flex';
+            }, 3500);
+
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.display = 'none';
+                document.getElementById('interactive-part').style.display = 'none';
+                document.getElementById('results-part').style.display = 'block';
+            }, 5500);
+        }
+    </script>
 
 </body>
 </html>
